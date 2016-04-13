@@ -1,0 +1,34 @@
+{
+  "name": "graph-balance-laplacian-solver-js",
+  "version": "1.0.0",
+  "description": "Solution to the graph balance equation with help of the laplacian potentials and js",
+  "main": "dist/gblsolvr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexsabdev/graph-balance-laplacian-solver-js.git"
+  },
+  "keywords": [
+    "graph",
+    "balance",
+    "equation",
+    "laplacian",
+    "potentials"
+  ],
+  "author": "alexsabdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexsabdev/graph-balance-laplacian-solver-js/issues"
+  },
+  "homepage": "https://github.com/alexsabdev/graph-balance-laplacian-solver-js#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express": "^1.4.1"
+  },
+  "dependencies": {
+    "mathjs": "^3.1.4"
+  }
+}
