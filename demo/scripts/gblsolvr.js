@@ -49,28 +49,6 @@
             }
         },
         /**
-         * chainable log method
-         * @return {Object} the object itself
-         */
-        log: function(msg) {
-            if (console) {
-                if (msg) {
-                    console.log(msg);
-                }
-            }
-            for (var i = 0; i < this.c.length; i++) {
-                var line = "";
-                for (var j = 0; j < this.c[i].length; j++) {
-                    line += this.c[i][j] + " ";
-                }
-                if (console) {
-                    console.log(line);
-                }
-            }
-            // make the method chainable
-            // return this;
-        },
-        /**
          * mothod calculating a node connectivity
          * @param  {Number} node node number
          * @return {Number}      result
@@ -98,12 +76,7 @@
                     }
                 }
             }
-            for (var i = 0; i < this.c.length; i++) {
-                for (var j = 0; j < this.c.length; j++) {
-                    this.c[i][j] = l[i][j];
-                }
-            }
-            return this;
+            return l;
         },
         /**
          * calculate the laplacian potential
@@ -112,16 +85,7 @@
          */
         laplacPot: function(index) {
         	var N = this.c.length;
-            var l = createArray(N, N);
-            var lap = this.laplacian().c;
-            for (var i = 0; i < N; i++) {
-            	for (var j = 0; j < N; j++) {
-            		l[i][j] = l[i][j] || 0 + lap[i][j]
-            	}
-            }
-            this.laplacian().c.map(function(arr) {
-                return arr.slice();
-            });
+            var l = this.laplacian();
             l.splice(index, 1);
             for (var i = 0; i < l.length; i++) {
                 l[i].splice(index, 1);
