@@ -23,5 +23,7 @@ console.log("Given Matrix of Connectivity C:");
 arrLog(GS$(demo).c);
 console.log("Transformation to its Laplacian L:");
 arrLog(GS$(demo).laplacian());
-console.log("Solution as a vector of the laplacian potentials P:");
+console.log("Solution as a vector of the laplacian potentials U:");
 arrLog(GS$(demo).allLaplacPot());
+console.log("Vector of flows J:");
+arrLog(GS$(demo).allFlows());

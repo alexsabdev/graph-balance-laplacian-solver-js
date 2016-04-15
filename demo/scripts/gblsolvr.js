@@ -11,7 +11,7 @@
     /**
      * method creating a 2D array
      * @param  {Number} length length of a dimension
-     * @return {Array}         result
+     * @return {Array}         2D array
      */
     var createArray = function(length) {
         var arr = new Array(length || 0),
@@ -51,7 +51,7 @@
         /**
          * mothod calculating a node connectivity
          * @param  {Number} node node number
-         * @return {Number}      result
+         * @return {Number}      node connectivity value
          */
         nodeConnect: function(node) {
             var buffer = 0;
@@ -61,8 +61,8 @@
             return buffer;
         },
         /**
-         * transform to the laplacian
-         * @return {Object} [description]
+         * transformation to the laplacian
+         * @return {Object} laplacian
          */
         laplacian: function() {
             var N = this.c.length;
@@ -80,8 +80,8 @@
         },
         /**
          * calculate the laplacian potential
-         * @param  {Number} index number of a potential
-         * @return {Number}       result
+         * @param  {Number} index number of a node
+         * @return {Number}       laplacian potential
          */
         laplacPot: function(index) {
         	var N = this.c.length;
@@ -101,6 +101,25 @@
             var array = [];
             for (var i = 0; i < this.c.length; i++) {
                 array.push(this.laplacPot(i));
+            }
+            return array;
+        },
+        /**
+         * calculate the flow
+         * @param  {Number} index number of a node
+         * @return {Number}       flow
+         */
+        flow: function(index) {
+            return this.nodeConnect(index) * this.laplacPot(index);
+        },
+        /**
+         * calculate all the flows
+         * @return {Array} array of the flows
+         */
+        allFlows: function() {
+            var array = [];
+            for (var i = 0; i < this.c.length; i++) {
+                array.push(this.flow(i));
             }
             return array;
         }
