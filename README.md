@@ -11,8 +11,10 @@ The v1.0.0 takes care of the closed balance equation only. Using given matrix of
 * calculating a node connectivity;
 * calculating laplacian potentials;
 * calculating node flows.
+
 ## Installation
 Download the library from the dist folder and link to you project. You can find either full or minified version there. Current version requires the mathjs library linked to your project. Publishing to the bower or the npm is subject to future development.
+
 ## Usage
 Simply use a shorthand "GS$()", put a matrix between the paranthesis and call one of following methods:
 ```javascript
