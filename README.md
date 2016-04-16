@@ -5,6 +5,7 @@ Solution to the graph balance equation with help of laplacian potentials and js.
 * version: v1.0.0
 * link: https://github.com/alexsabdev/graph-balance-laplacian-solver-js
 * dependencies: mathjs <https://github.com/josdejong/mathjs>
+
 ## Features
 The v1.0.0 takes care of the closed balance equation only. Using given matrix of the graph nodes connectivity it peforms:
 * transfomation of the connectivity matrix to its laplacian form;
