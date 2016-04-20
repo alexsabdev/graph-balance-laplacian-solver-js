@@ -99,6 +99,8 @@
          * @return {Number}       laplacian potential
          */
         laplacPot: function(index) {
+            var N = this.c.length;
+            var l = this.laplacian();
             for (var i = 0; i < N; i++) {
                 if (i === 0) {
                     l[0][i] = 1;
