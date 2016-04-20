@@ -83,7 +83,7 @@
          * @param  {Number} index number of a node
          * @return {Number}       laplacian potential
          */
-        laplacPot: function(index) {
+        laplacPotDet: function(index) {
         	var N = this.c.length;
             var l = this.laplacian();
             l.splice(index, 1);
@@ -92,6 +92,23 @@
             }
             var lm = math.matrix(l);
             return math.det(lm);
+        },
+        /**
+         * one more way to find potentials; better for big qty of nodes
+         * @param  {Number} index number of nodes
+         * @return {Number}       laplacian potential
+         */
+        laplacPot: function(index) {
+            for (var i = 0; i < N; i++) {
+                if (i === 0) {
+                    l[0][i] = 1;
+                } else {
+                    l[0][i] = 0;
+                }
+            }
+            var inv = math.inv(l);
+            var detInv = math.det(inv);
+            return inv[index][0] / detInv;
         },
         /**
          * calculate all the laplacian potentials
